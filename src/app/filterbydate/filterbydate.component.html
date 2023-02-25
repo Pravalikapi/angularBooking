@@ -1,0 +1,46 @@
+
+<!-- 
+<h4>By Date Of Booking</h4>
+<input type="text" #dateOfBooking>
+<button (click)="getBooking1(dateOfBooking.value)">Load Booking</button> -->
+
+<h4>Booking By ID</h4>
+<input type="text" #bookingId>
+<button (click)="getBooking1(bookingId.value)">Load Booking</button>
+
+
+<h4>Booking By ID</h4>
+<input type="text" #bookedFrom>
+<button (click)="getBooking2(bookedFrom.value)">Load </button>
+
+
+<h2>All Bookings List</h2>
+<div *ngFor="let b of allBooking">
+    <table>
+            <tr>
+              <td>bookedFrom: {{b.bookedFrom}}</td>
+
+              <td>
+                bookedTo: {{b.bookedTo}}
+              </td>
+            <td>
+              name : {{b.name}}
+
+            </td>
+           
+            <hr/>
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

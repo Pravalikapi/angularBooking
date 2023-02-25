@@ -1,0 +1,41 @@
+<div *ngFor="let b of allBookings">
+    <div><p>Booking Id:{{b.bookingId}}</p></div>
+
+    <div> <p>Customer Name:{{b.name}}</p></div>
+    <!-- <div> <p>Hotel Id{{b.hotelId}}</p></div>
+    <div> <p> Room Id{{b.roomId}}</p></div>
+    <div> <p>User Id{{b.userId}}</p></div> --> 
+    <div><p>Check In: {{b.bookedFrom}}</p></div>
+    <div> <p>Check Out: {{b.bookedTo}}</p></div>
+    <div> <p>No.Of Adults:{{b.noOfAdults}}</p></div>
+    <div> <p>No.Of Children:{{b.noOfChildren}}</p></div>
+    
+    
+    <hr>
+</div>
+
+
+<!-- <table> 
+    <thead>
+      <tr>
+        <th>Booking Id</th>
+        <th>Customer Name</th>
+        <th>Check-in Date</th>
+        <th>Check-out Date</th>
+        <th>No.of Adults</th>
+        <th>No.of Children</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let b of allBookings">
+        <td>{{b.bookingId }}</td>
+        <td>{{ b.name}}</td>
+        <td>{{ {b.bookedFrom}}</td>
+        <td>{{ b.bookedTo}}</td>
+        <td>{{b.noOfAdults }}</td>
+        <td>{{ b.noOfChildren}}</td>
+        
+      </tr>
+    </tbody>
+  </table>
+   -->

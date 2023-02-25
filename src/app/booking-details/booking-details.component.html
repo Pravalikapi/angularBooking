@@ -1,0 +1,99 @@
+<h1> Please Provide Your Details </h1>
+    
+    <form (ngSubmit)="onSubmit()" #bookingDetailsForm="ngForm">
+      <tr>
+      <div class="form-group">
+        <label for="name">Enter Customer Name</label>
+        <input type="text" class="form-control" id="name" name="name"
+               [(ngModel)]="model.name" placeholder="Enter Name " #name="ngModel"  pattern="[a-zA-Z]+" required>
+
+               <div *ngIf="name.invalid">
+                <span style="color: red;" *ngIf="name.errors?.['required']">
+
+                    Please Enter Name
+                </span>
+                <span style="color: red;" *ngIf="name.errors?.['pattern']">
+                  Name is not valid.
+                </span>
+
+            </div>
+        
+      </div>
+    </tr>
+    <br><br>
+    
+    
+    <br><br>
+    <tr>
+      <div class="form-group">
+        <label for="bookedFrom">Check In Date</label>
+        <input type="date" class="form-control" id="bookedFrom" name="bookedFrom"
+        [(ngModel)]="model.bookedFrom"    min="{{today}}"  required>
+                  
+      </div>
+    </tr>
+    <br><br>
+
+    <tr>
+        <div class="form-group">
+          <label for="bookedTo">Check Out Date</label>
+          <input type="date" class="form-control" id="bookedTo" name="bookedTo" 
+          [(ngModel)]="model.bookedTo"    min="{{today}}" required>
+                    
+        </div>
+      </tr>
+      <br><br>
+
+      <tr>
+        <div class="form-group">
+          <label for="noOfAdults">No of Adults</label>
+          <input type="text" class="form-control" id="noOfAdults" name="noOfAdults"
+                 [(ngModel)]="model.noOfAdults" placeholder="Enter No.Of Adults"  #noOfAdults="ngModel" required pattern="[0-9]+">
+
+
+                
+            <div *ngIf="noOfAdults.invalid">
+                <span style="color: red;" *ngIf="noOfAdults.errors?.['required']">
+
+                    Please mention number of adults
+                </span>
+                <span style="color: red;" *ngIf="noOfAdults.errors?.['pattern']">
+                  noOfAdults is not valid.
+                </span>
+
+            </div>
+          
+        </div>
+      </tr>
+      <br><br>
+
+      <tr>
+        <div class="form-group">
+          <label for="noOfChildren"> No.Of Children</label>
+          <input type="text" class="form-control" id="noOfChildren" name="noOfChildren"
+                 [(ngModel)]="model.noOfChildren" placeholder="Enter No.Of Children " #noOfChildren="ngModel" required pattern="[0-9]+">
+
+                 <div *ngIf="noOfChildren.invalid">
+                  <span style="color: red;" *ngIf="noOfChildren.errors?.['required']">
+  
+                      Please mention number of Children
+                  </span>
+                  <span style="color: red;" *ngIf="noOfChildren.errors?.['pattern']">
+                    noOfChildren is not valid.
+                  </span>
+  
+              </div>
+          
+        </div>
+      </tr>
+      <br><br>
+
+    
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+ 
+  
+    <div *ngIf="status == true" class="alert alert-success mt-3">Your details has been submitted successfully.</div>
+    <div *ngIf="status == false" class="alert alert-danger mt-3">An error occurred while providing.</div>
+   
+  
